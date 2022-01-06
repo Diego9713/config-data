@@ -17,4 +17,4 @@ spring:
         - id: customer-ms
           uri: lb://customer-ms
           predicates:
-            - Path=/api/v1/customers/**
+            - Path=/api/v1/customers
