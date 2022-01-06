@@ -16,6 +16,6 @@ spring:
           enabled: true
       routes:
         - id: db-customer
-          uri: lb://db-customer
+          uri: http://localhost:8080
           predicates:
             - Path=/api/v1/customers/**
