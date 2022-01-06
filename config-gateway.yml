@@ -15,7 +15,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: db-customer
-          uri: http://localhost:8080
+        - id: customer-ms
+          uri: lb://customer-ms
           predicates:
             - Path=/api/v1/customers/**
