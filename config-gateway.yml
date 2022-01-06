@@ -1,0 +1,23 @@
+server:
+  port: 8081
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    hostname: localhost
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: config-customer
+          uri: lb://config-customer
+          predicates:
+            - Path=/api/v1/customers/**
