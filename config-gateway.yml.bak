@@ -15,7 +15,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: config-customer
-          uri: lb://config-customer
+        - id: db-customer
+          uri: lb://db-customer
           predicates:
             - Path=/api/v1/customers/**
