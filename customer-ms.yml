@@ -1,8 +1,5 @@
 server:
   port: ${PORT:${SERVER_PORT:0}}
-  data:
-    mongodb:
-      uri: mongodb+srv://root:s3cr3t@cluster0.majt8.mongodb.net/db-customer?retryWrites=true&w=majority
 eureka:
   client:
     registerWithEureka: true
