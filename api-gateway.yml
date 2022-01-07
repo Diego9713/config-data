@@ -18,4 +18,12 @@ spring:
         - id: customer-ms
           uri: lb://CUSTOMER-MS
           predicates:
-            - Path=/api/v1/customers
+            - Path=/api/v1/customers/**
+        - id: product-ms
+          uri: lb://PRODUCT-MS
+          predicates:
+            - Path=/api/v1/products/**
+        - id: transaction-ms
+          uri: lb://TRANSACTION-MS
+          predicates:
+            - Path=/api/v1/transactions/**
