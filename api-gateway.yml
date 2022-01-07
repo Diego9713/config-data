@@ -23,3 +23,7 @@ spring:
           uri: lb://PRODUCT-MS
           predicates:
             - Path=/api/v1/products/**
+        - id: transaction-ms
+          uri: lb://TRANSACTION-MS
+          predicates:
+            - Path=/api/v1/transactions/**
