@@ -12,3 +12,4 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://root:s3cr3t@cluster0.okswb.mongodb.net/db-transaction?retryWrites=true&w=majority
+      

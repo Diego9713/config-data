@@ -12,4 +12,3 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://root:s3cr3t@cluster0.majt8.mongodb.net/db-customer?retryWrites=true&w=majority
-

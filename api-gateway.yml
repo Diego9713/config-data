@@ -27,3 +27,7 @@ spring:
           uri: lb://TRANSACTION-MS
           predicates:
             - Path=/api/v1/transactions/**
+        - id: card-ms
+          uri: lb://CARD-MS
+          predicates:
+            - Path=/api/v1/cards/**
