@@ -6,13 +6,12 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-      #defaultZone: ${EUREKA_URI:http://192.168.100.116:8761/eureka}
   instance:
     hostname: localhost
     
 resilience4j.circuitbreaker:
     instances:
-        postTransactionDebitCB:
+        postProductCB:
             registerHealthIndicator: true
             slidingWindowSize: 10
             permittedNumberOfCallsInHalfOpenState: 3
@@ -21,7 +20,7 @@ resilience4j.circuitbreaker:
             waitDurationInOpenState: 5s
             failureRateThreshold: 50
             eventConsumerBufferSize: 10
-        postTransferDebitCB:
+        postProductRegisterCustomerCB:
             registerHealthIndicator: true
             slidingWindowSize: 10
             permittedNumberOfCallsInHalfOpenState: 3
@@ -30,7 +29,7 @@ resilience4j.circuitbreaker:
             waitDurationInOpenState: 5s
             failureRateThreshold: 50
             eventConsumerBufferSize: 10
-        putTransactionDebitCB:
+        putProductCB:
             registerHealthIndicator: true
             slidingWindowSize: 10
             permittedNumberOfCallsInHalfOpenState: 3
@@ -39,34 +38,7 @@ resilience4j.circuitbreaker:
             waitDurationInOpenState: 5s
             failureRateThreshold: 50
             eventConsumerBufferSize: 10
-        deleteTransactionDebitCB:
-            registerHealthIndicator: true
-            slidingWindowSize: 10
-            permittedNumberOfCallsInHalfOpenState: 3
-            slidingWindowType: TIME_BASED
-            minimumNumberOfCalls: 4
-            waitDurationInOpenState: 5s
-            failureRateThreshold: 50
-            eventConsumerBufferSize: 10
-        postTransactionCreditCB:
-            registerHealthIndicator: true
-            slidingWindowSize: 10
-            permittedNumberOfCallsInHalfOpenState: 3
-            slidingWindowType: TIME_BASED
-            minimumNumberOfCalls: 4
-            waitDurationInOpenState: 5s
-            failureRateThreshold: 50
-            eventConsumerBufferSize: 10
-        putTransactionCreditCB:
-            registerHealthIndicator: true
-            slidingWindowSize: 10
-            permittedNumberOfCallsInHalfOpenState: 3
-            slidingWindowType: TIME_BASED
-            minimumNumberOfCalls: 4
-            waitDurationInOpenState: 5s
-            failureRateThreshold: 50
-            eventConsumerBufferSize: 10
-        deleteTransactionCreditCB:
+        deleteProductCB:
             registerHealthIndicator: true
             slidingWindowSize: 10
             permittedNumberOfCallsInHalfOpenState: 3
@@ -79,5 +51,4 @@ resilience4j.circuitbreaker:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://root:s3cr3t@cluster0.okswb.mongodb.net/db-transaction?retryWrites=true&w=majority
-      
+      uri: mongodb+srv://root:s3cr3t@cluster0.di4mf.mongodb.net/db-account?retryWrites=true&w=majority
