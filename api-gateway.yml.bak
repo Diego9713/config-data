@@ -15,18 +15,18 @@ spring:
           enabled: true
       routes:
         - id: customer-ms
-          uri: lb://CUSTOMER-MS
+          uri: http://192.168.100.116:8002
           predicates:
             - Path=/api/v1/customers/**
         - id: product-ms
-          uri: lb://PRODUCT-MS
+          uri: http://192.168.100.116:8003
           predicates:
             - Path=/api/v1/products/**
         - id: transaction-ms
-          uri: lb://TRANSACTION-MS
+          uri: http://192.168.100.116:8004
           predicates:
             - Path=/api/v1/transactions/**
         - id: card-ms
-          uri: lb://CARD-MS
+          uri: http://192.168.100.116:8005
           predicates:
             - Path=/api/v1/cards/**
