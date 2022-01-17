@@ -9,17 +9,19 @@ eureka:
   instance:
     hostname: localhost
     
-resilience4j.circuitbreaker:
+resilience4j:
+  circuitbreaker:
     instances:
-        productCB:
-            registerHealthIndicator: true
-            slidingWindowSize: 10
-            permittedNumberOfCallsInHalfOpenState: 3
-            slidingWindowType: TIME_BASED
-            minimumNumberOfCalls: 4
-            waitDurationInOpenState: 5s
-            failureRateThreshold: 50
-            eventConsumerBufferSize: 10
+      productCB:
+        slidingWindowSize: 3
+        slidingWindowType: COUNT_BASED
+        waitDurationInOpenState: 2
+        waitInterval: 20000
+        failureRateThreshold: 50
+        permittedNumberOfCallsInHalfOpenState: 5
+        registerHealthIndicator: true
+        #register-health-indicator: true
+        allowHealthIndicatorToFail: true
         
 spring:
   data:
