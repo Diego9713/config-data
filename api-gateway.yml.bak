@@ -28,6 +28,5 @@ spring:
             - Path=/api/v1/transactions/**
         - id: card-ms
           uri: http://192.168.100.116:8005
-          #uri: lb://CARD-MS
           predicates:
             - Path=/api/v1/cards/**
