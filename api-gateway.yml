@@ -35,3 +35,9 @@ spring:
           #uri: lb://CARD-MS
           predicates:
             - Path=/api/v1/cards/**
+        - id: yanki-ms
+          #uri: http://40.88.234.98:8005
+          #uri: http://localhost:8005
+          uri: lb://yanki-ms
+          predicates:
+            - Path=/api/v1/yankis/**
