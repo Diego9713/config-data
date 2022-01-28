@@ -9,7 +9,8 @@ eureka:
       #defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
       defaultZone: ${EUREKA_URI:http://52.151.226.196:8761/eureka}
   instance:
-    hostname: localhost
+    #hostname: localhost
+    preferIpAddress: true
     
 resilience4j.circuitbreaker:
     instances:
