@@ -36,7 +36,7 @@ spring:
           predicates:
             - Path=/api/v1/cards/**
         - id: yanki-ms
-          uri: http://192.168.100.119:8005
+          uri: http://192.168.100.119:8006
           #uri: http://localhost:8005
           #uri: lb://yanki-ms
           predicates:
