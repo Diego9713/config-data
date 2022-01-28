@@ -6,8 +6,8 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-      #defaultZone: ${EUREKA_URI:http://20.62.231.42:8761/eureka}
+      #defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://52.151.226.196:8761/eureka}
   instance:
     hostname: localhost
 spring:
