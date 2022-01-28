@@ -15,8 +15,8 @@ spring:
           enabled: true
       routes:
         - id: customer-ms
-          #uri: http://40.76.131.227:8002
-          uri: lb://customer-ms
+          uri: http://20.85.204.185:8002
+          #uri: lb://customer-ms
           predicates:
             - Path=/api/v1/customers/**
         - id: product-ms
